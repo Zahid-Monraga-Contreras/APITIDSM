@@ -13,8 +13,8 @@ const options = {
         },
         servers: [
             {
-                // url: 'http://localhost:'+process.env.PORT , // URL Base del Servidor de la API
-                url: `http://192.168.1.68:${process.env.PORT || 3000}`
+                url: 'http://localhost:'+process.env.PORT , // URL Base del Servidor de la API
+                // url: `http://192.168.1.68:${process.env.PORT || 3000}`
 
             },
         ],
@@ -27,9 +27,9 @@ const swaggerSpec = swaggerJsdoc(options);
 const swaggerDocs = (app) => {
     app.use('/api-docs', swaggerUi.serve,
         swaggerUi.setup(swaggerSpec));
-        console.log(`Swagger docs available at http://192.168.1.68:${process.env.PORT || 3000}/api-docs`);
-        // console.log('Swagger docs available at http://localhost:'+
-        //   process.env.PORT+'/api-docs');
+        // console.log(`Swagger docs available at http://192.168.1.68:${process.env.PORT || 3000}/api-docs`);
+        console.log('Swagger docs available at http://localhost:'+
+           process.env.PORT+'/api-docs');
 };
 
 module.exports = swaggerDocs;
