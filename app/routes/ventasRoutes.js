@@ -5,16 +5,16 @@
  *     Sales:
  *       type: object
  *       required:
- *         - IdCliente
+ *         - Cliente
  *         - FechaVenta
  *         - Total
  *       properties:
  *         IdVenta:
  *           type: integer
  *           description: ID único de la Venta.
- *         IdCliente:
- *           type: integer
- *           description: ID del Usuario Asociado al Cliente.
+ *         Cliente:
+ *           type: string
+ *           description: Nombre del Cliente Asociado.
  *         FechaVenta:
  *           type: string
  *           format: date-time
@@ -36,7 +36,7 @@
  *           description: Fecha de Eliminación.
  *       example:
  *         IdVenta: 1
- *         IdCliente: 2
+ *         Cliente: Zahid 
  *         FechaVenta: "2024-10-22T10:20:30Z"
  *         Total: 75.00
  */
@@ -73,9 +73,9 @@
  *           schema:
  *             type: object
  *             properties:
- *               IdCliente:
- *                 type: integer
- *                 description: ID del Cliente Asociado.
+ *               Cliente:
+ *                 type: string
+ *                 description: Nombre del Cliente Asociado.
  *               FechaVenta:
  *                 type: string
  *                 format: date-time
@@ -84,7 +84,7 @@
  *                 type: number
  *                 description: Total de la Venta.
  *             example:
- *               IdCliente: 2
+ *               Cliente: Zahid
  *               FechaVenta: "2024-10-22T10:20:30Z"
  *               Total: 75.00
  *     responses:
@@ -144,9 +144,9 @@
  *           schema:
  *             type: object
  *             properties:
- *               IdCliente:
- *                 type: integer
- *                 description: ID del Cliente Asociado.
+ *               Cliente:
+ *                 type: string
+ *                 description: Nombre del Cliente Asociado.
  *               FechaVenta:
  *                 type: string
  *                 format: date-time
@@ -155,7 +155,7 @@
  *                 type: number
  *                 description: Total de la Venta.
  *             example:
- *               IdCliente: 3
+ *               Cliente: Zahid
  *               FechaVenta: "2024-10-30T12:34:56Z"
  *               Total: 150.75
  *     responses:

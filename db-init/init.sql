@@ -148,23 +148,22 @@ SELECT *FROM SERVICIOS;
 -- Tabla de Ventas
 CREATE TABLE VENTAS (
     IdVenta SERIAL,
-    IdCliente INT NOT NULL,
+    Cliente VARCHAR(40) NOT NULL,
     FechaVenta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     Total DECIMAL(10,2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP NULL,
-    PRIMARY KEY (IdVenta),
-    FOREIGN KEY (IdCliente) REFERENCES CLIENTES (IdCliente) ON UPDATE CASCADE ON DELETE RESTRICT
+    PRIMARY KEY (IdVenta)
 );
 
 -- Insertar datos en la tabla VENTAS
-INSERT INTO VENTAS (IdCliente, FechaVenta, Total) VALUES
-(1, '2023-11-15 10:30:00', 125.50),
-(2, '2023-11-15 11:45:00', 89.75),
-(3, '2023-11-16 09:15:00', 210.00),
-(1, '2023-11-17 14:20:00', 45.25),
-(4, '2023-11-18 16:30:00', 175.80);
+INSERT INTO VENTAS (Cliente, FechaVenta, Total) VALUES
+('Juan Pérez', '2023-11-15 10:30:00', 125.50),
+('María López', '2023-11-15 11:45:00', 89.75),
+('Carlos Gómez', '2023-11-16 09:15:00', 210.00),
+('Juan Pérez', '2023-11-17 14:20:00', 45.25),
+('Ana Torres', '2023-11-18 16:30:00', 175.80);
 
 select *from ventas;
 

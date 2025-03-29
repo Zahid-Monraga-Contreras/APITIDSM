@@ -13,23 +13,23 @@ class Ventas {
     }
 
     static async create(data) {
-        const { IdCliente, FechaVenta, Total } = data; 
+        const { Cliente, FechaVenta, Total } = data; 
         const result = await pool.query(
-            `INSERT INTO VENTAS (IdCliente, FechaVenta, Total) 
+            `INSERT INTO VENTAS (Cliente, FechaVenta, Total) 
              VALUES ($1, $2, $3) RETURNING *`,
-            [IdCliente, FechaVenta, Total]
+            [Cliente, FechaVenta, Total]
         );
         return result.rows[0];
     }
 
     static async update(IdVenta, data) {
-        const { IdCliente, FechaVenta, Total } = data;  
+        const { Cliente, FechaVenta, Total } = data;  
 
         const result = await pool.query(
             `UPDATE VENTAS
-             SET IdCliente = $1, FechaVenta = $2, Total =$3
+             SET Cliente = $1, FechaVenta = $2, Total =$3
              WHERE IdVenta = $4 RETURNING *`,
-            [IdCliente, FechaVenta, Total, IdVenta]
+            [Cliente, FechaVenta, Total, IdVenta]
         );
         return result.rows[0];
     }
